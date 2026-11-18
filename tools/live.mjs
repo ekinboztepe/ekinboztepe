@@ -31,10 +31,10 @@ async function gh(url, body) {
 const brightness = {}, pushed = {};
 for (const b of cfg.brands) {
   const times = [];
-  // Latest real commit: commits that only add or update the sigil itself don't count as work.
+  // Latest real commit: sigil and README-only touch-ups do not count as work.
   for (const repo of b.repos) {
     const commits = await gh(`https://api.github.com/repos/${OWNER}/${repo}/commits?per_page=20`);
-    const real = Array.isArray(commits) && commits.find(c => !/\bsigil\b/i.test(c.commit.message));
+    const real = Array.isArray(commits) && commits.find(c => !/\b(sigil|readme)\b/i.test(c.commit.message));
     if (real) times.push(Date.parse(real.commit.committer.date));
   }
   if (!times.length) continue;

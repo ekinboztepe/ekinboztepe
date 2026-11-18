@@ -2,7 +2,11 @@
   "brightness": {
     "cipherforest": 1,
     "vizdoom-rl": 0.64,
+    "milk10k": 0.78,
     "athena": 0.55,
+    "nexus": 0.89,
+    "retrocloud": 0.55,
+    "applistingkit": 1,
     "legit": 0.55
   }
 }
