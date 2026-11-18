@@ -1,0 +1,17 @@
+{
+  "name": "vizdoom-rl",
+  "hex": "0x181824DBDB241818",
+  "rows": [
+    "...##...",
+    "...##...",
+    "..#..#..",
+    "##.##.##",
+    "##.##.##",
+    "..#..#..",
+    "...##...",
+    "...##..."
+  ],
+  "color": "#f85149",
+  "style": "led",
+  "tagline": "A PPO agent that learns to play Doom from raw pixels alone."
+}

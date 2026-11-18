@@ -1,0 +1,17 @@
+{
+  "name": "athena",
+  "hex": "0x81C3FF9999FF7E24",
+  "rows": [
+    "#......#",
+    "##....##",
+    "########",
+    "#..##..#",
+    "#..##..#",
+    "########",
+    ".######.",
+    "..#..#.."
+  ],
+  "color": "#a371f7",
+  "style": "led",
+  "tagline": "Athena: a personal AI coach for everyday cybersecurity awareness."
+}

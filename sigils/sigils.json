@@ -1,0 +1,185 @@
+{
+  "style": "led",
+  "fallbackStyle": "solid",
+  "card": "c",
+  "owner": "ekinboztepe",
+  "brands": [
+    {
+      "id": "cipherforest",
+      "repos": [
+        "cipherforest"
+      ],
+      "visibility": "public",
+      "color": "#3fb950",
+      "rows": [
+        "..####..",
+        ".######.",
+        "###..###",
+        "###..###",
+        ".######.",
+        "..####..",
+        "...##...",
+        "..####.."
+      ],
+      "hex": "0x3C7EE7E77E3C183C",
+      "tagline": "Encrypted tree-model inference that returns the prediction and its exact SHAP explanation.",
+      "short": "Runs your model on encrypted data and tells you why. The server sees none of it.",
+      "story": "Ağaç ve kilit tek şekilde: tepesinde anahtar deliği olan bir ağaç. Şifreli (TFHE) ağaç modeli, sunucu hiçbir şey görmüyor."
+    },
+    {
+      "id": "vizdoom-rl",
+      "repos": [
+        "vizdoom-rl-project"
+      ],
+      "visibility": "public",
+      "color": "#f85149",
+      "rows": [
+        "...##...",
+        "...##...",
+        "..#..#..",
+        "##.##.##",
+        "##.##.##",
+        "..#..#..",
+        "...##...",
+        "...##..."
+      ],
+      "hex": "0x181824DBDB241818",
+      "tagline": "A PPO agent that learns to play Doom from raw pixels alone.",
+      "story": "Nişangah: ajan sadece piksellerden nişan almayı öğreniyor. Doom kırmızısı.",
+      "short": "An agent that learned to play Doom from nothing but the pixels on screen."
+    },
+    {
+      "id": "milk10k",
+      "repos": [
+        "SkinCancer-MILK10k-Core"
+      ],
+      "visibility": "private",
+      "color": "#db8a5a",
+      "rows": [
+        "..####..",
+        ".#....#.",
+        "#..##..#",
+        "#.###..#",
+        "#..###.#",
+        "#...#..#",
+        ".#....#.",
+        "..####.."
+      ],
+      "hex": "0x3C4299B99D89423C",
+      "tagline": "Dual-stream dermoscopy classifier with a fractal-dimension feature and skin-tone-aware splits.",
+      "story": "Dermoskop merceği ve içinde düzensiz kenarlı bir lezyon (fraktal boyut özelliğine gönderme). Ten rengi tonu.",
+      "short": "Reads dermoscopy images, with extra care for the skin tones most datasets underrepresent."
+    },
+    {
+      "id": "athena",
+      "repos": [
+        "project-odyssey"
+      ],
+      "visibility": "public",
+      "color": "#a371f7",
+      "rows": [
+        "#......#",
+        "##....##",
+        "########",
+        "#..##..#",
+        "#..##..#",
+        "########",
+        ".######.",
+        "..#..#.."
+      ],
+      "hex": "0x81C3FF9999FF7E24",
+      "tagline": "Athena: a personal AI coach for everyday cybersecurity awareness.",
+      "story": "Baykuş: Athena'nın kuşu, bilgelik ve tetikte olmak. Repo adı geçici olduğu için sigil 'Athena' adını taşıyor.",
+      "short": "An AI coach that teaches everyday people to spot cyber threats."
+    },
+    {
+      "id": "nexus",
+      "repos": [
+        "project-nexus"
+      ],
+      "visibility": "private",
+      "color": "#39c5cf",
+      "rows": [
+        "#......#",
+        ".#....#.",
+        "..####..",
+        "..#..#..",
+        "..#..#..",
+        "..####..",
+        ".#....#.",
+        "#......#"
+      ],
+      "hex": "0x81423C24243C4281",
+      "tagline": "A co-op gaming hub: groups, matchmaking and real-time chat.",
+      "story": "Merkez halka ve dört köşeye uzanan bağlantı: oyuncuları bir araya getiren hub.",
+      "short": "A hub for finding people to play co-op games with."
+    },
+    {
+      "id": "retrocloud",
+      "repos": [
+        "retrocloud-webrtc",
+        "retrocloud-frontend"
+      ],
+      "visibility": "private",
+      "color": "#58a6ff",
+      "rows": [
+        "........",
+        "..##.##.",
+        ".#######",
+        "##.###.#",
+        "#...####",
+        "##.##.##",
+        ".######.",
+        "........"
+      ],
+      "hex": "0x00367FDD8FDB7E00",
+      "tagline": "Classic games streamed over WebRTC, one isolated container per player.",
+      "story": "Bulut gövdesine oyulmuş yön tuşu ve iki düğme: bulutta çalışan retro gamepad. İki repo (webrtc + frontend) tek marka.",
+      "short": "Classic games in the browser, each player in their own cloud container."
+    },
+    {
+      "id": "applistingkit",
+      "repos": [
+        "applistingkit"
+      ],
+      "visibility": "private",
+      "color": "#ffa657",
+      "rows": [
+        ".######.",
+        ".#....#.",
+        ".#.##.#.",
+        ".#....#.",
+        ".#.##.#.",
+        ".#....#.",
+        ".##..##.",
+        ".######."
+      ],
+      "hex": "0x7E425A425A42667E",
+      "tagline": "Turn app screenshots into store-ready listing images, right in the browser.",
+      "story": "Telefon çerçevesi, ekranda başlık satırları ve ana düğme: mağaza görseli üreten editör.",
+      "short": "Turns app screenshots into store-ready listing images. No sign-up."
+    },
+    {
+      "id": "legit",
+      "repos": [
+        "project-legit"
+      ],
+      "visibility": "public",
+      "color": "#d4a72c",
+      "rows": [
+        "..####..",
+        ".######.",
+        "######.#",
+        "#.###.##",
+        "##.#.###",
+        "###.####",
+        ".######.",
+        "..####.."
+      ],
+      "hex": "0x3C7EFDBBD7EF7E3C",
+      "tagline": "Product authenticity on the Stellar blockchain: scan, verify, trace.",
+      "story": "Altın bir mühür ve içine oyulmuş onay işareti: 'LEGIT VERIFIED'.",
+      "short": "Scan a product and see on the blockchain whether it's genuine."
+    }
+  ]
+}

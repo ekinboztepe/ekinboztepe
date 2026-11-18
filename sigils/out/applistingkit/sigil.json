@@ -1,0 +1,17 @@
+{
+  "name": "applistingkit",
+  "hex": "0x7E425A425A42667E",
+  "rows": [
+    ".######.",
+    ".#....#.",
+    ".#.##.#.",
+    ".#....#.",
+    ".#.##.#.",
+    ".#....#.",
+    ".##..##.",
+    ".######."
+  ],
+  "color": "#ffa657",
+  "style": "led",
+  "tagline": "Turn app screenshots into store-ready listing images, right in the browser."
+}

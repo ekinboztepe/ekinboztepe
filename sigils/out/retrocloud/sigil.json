@@ -1,0 +1,17 @@
+{
+  "name": "retrocloud",
+  "hex": "0x00367FDD8FDB7E00",
+  "rows": [
+    "........",
+    "..##.##.",
+    ".#######",
+    "##.###.#",
+    "#...####",
+    "##.##.##",
+    ".######.",
+    "........"
+  ],
+  "color": "#58a6ff",
+  "style": "led",
+  "tagline": "Classic games streamed over WebRTC, one isolated container per player."
+}

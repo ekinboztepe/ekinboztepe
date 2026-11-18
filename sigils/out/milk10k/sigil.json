@@ -1,0 +1,17 @@
+{
+  "name": "milk10k",
+  "hex": "0x3C4299B99D89423C",
+  "rows": [
+    "..####..",
+    ".#....#.",
+    "#..##..#",
+    "#.###..#",
+    "#..###.#",
+    "#...#..#",
+    ".#....#.",
+    "..####.."
+  ],
+  "color": "#db8a5a",
+  "style": "led",
+  "tagline": "Dual-stream dermoscopy classifier with a fractal-dimension feature and skin-tone-aware splits."
+}

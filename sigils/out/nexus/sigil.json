@@ -1,0 +1,17 @@
+{
+  "name": "nexus",
+  "hex": "0x81423C24243C4281",
+  "rows": [
+    "#......#",
+    ".#....#.",
+    "..####..",
+    "..#..#..",
+    "..#..#..",
+    "..####..",
+    ".#....#.",
+    "#......#"
+  ],
+  "color": "#39c5cf",
+  "style": "led",
+  "tagline": "A co-op gaming hub: groups, matchmaking and real-time chat."
+}
