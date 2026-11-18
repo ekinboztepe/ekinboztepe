@@ -24,7 +24,8 @@
       "hex": "0x3C7EE7E77E3C183C",
       "tagline": "Encrypted tree-model inference that returns the prediction and its exact SHAP explanation.",
       "short": "Runs your model on encrypted data and tells you why. The server sees none of it.",
-      "story": "Ağaç ve kilit tek şekilde: tepesinde anahtar deliği olan bir ağaç. Şifreli (TFHE) ağaç modeli, sunucu hiçbir şey görmüyor."
+      "story": "Ağaç ve kilit tek şekilde: tepesinde anahtar deliği olan bir ağaç. Şifreli (TFHE) ağaç modeli, sunucu hiçbir şey görmüyor.",
+      "link": "cipherforest"
     },
     {
       "id": "vizdoom-rl",
@@ -46,7 +47,9 @@
       "hex": "0x181824DBDB241818",
       "tagline": "A PPO agent that learns to play Doom from raw pixels alone.",
       "story": "Nişangah: ajan sadece piksellerden nişan almayı öğreniyor. Doom kırmızısı.",
-      "short": "An agent that learned to play Doom from nothing but the pixels on screen."
+      "short": "An agent that learned to play Doom from nothing but the pixels on screen.",
+      "team": "Team of 2. I did the training, the agent did the dying.",
+      "link": "vizdoom-rl-project"
     },
     {
       "id": "milk10k",
@@ -90,7 +93,9 @@
       "hex": "0x81C3FF9999FF7E24",
       "tagline": "Athena: a personal AI coach for everyday cybersecurity awareness.",
       "story": "Baykuş: Athena'nın kuşu, bilgelik ve tetikte olmak. Repo adı geçici olduğu için sigil 'Athena' adını taşıyor.",
-      "short": "An AI coach that teaches everyday people to spot cyber threats."
+      "short": "An AI coach that teaches everyday people to spot cyber threats.",
+      "team": "Team of 5. I ran the sprints and shipped the app.",
+      "link": "project-odyssey"
     },
     {
       "id": "nexus",
@@ -179,7 +184,8 @@
       "hex": "0x3C7EFDBBD7EF7E3C",
       "tagline": "Product authenticity on the Stellar blockchain: scan, verify, trace.",
       "story": "Altın bir mühür ve içine oyulmuş onay işareti: 'LEGIT VERIFIED'.",
-      "short": "Scan a product and see on the blockchain whether it's genuine."
+      "short": "Scan a product and see on the blockchain whether it's genuine.",
+      "link": "project-legit"
     }
   ]
 }

@@ -121,11 +121,11 @@ function findBrowser() {
   ];
   return c.find(p => p && fs.existsSync(p));
 }
-function screenshot(browser, htmlFile, pngFile) {
+function screenshot(browser, htmlFile, pngFile, w = 1280, h = 640) {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), "sigil-"));
   try {
     execFileSync(browser, ["--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run", "--force-device-scale-factor=1",
-      `--user-data-dir=${profile}`, "--window-size=1280,640", "--virtual-time-budget=6000", `--screenshot=${pngFile}`, pathToFileURL(htmlFile).href],
+      `--user-data-dir=${profile}`, `--window-size=${w},${h}`, "--virtual-time-budget=6000", `--screenshot=${pngFile}`, pathToFileURL(htmlFile).href],
       { stdio: "ignore", timeout: 60000 });
   } finally { fs.rmSync(profile, { recursive: true, force: true }); }
 }
@@ -189,3 +189,62 @@ function shelfSvg(brands) {
 }
 fs.writeFileSync(path.join(OUT, "shelf.svg"), shelfSvg(cfg.brands.map(raw => ({ ...raw, hex: hexOf(raw.rows) }))));
 console.log("shelf.svg");
+
+// ---------- README pieces ----------
+// Square card for the profile README: shown at half width, so the text is set large.
+function readmeCardHtml(b, st) {
+  const bytes = rowBytes(b.rows).map(x => `<span>${x}</span>`).join("");
+  const nameSize = Math.min(72, Math.floor(672 / (b.id.length * 0.8)));
+  return `<!doctype html><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Archivo:wght@400&family=IBM+Plex+Mono:wght@400;500&display=block">
+<style>*{margin:0;box-sizing:border-box}html,body{width:800px;height:800px;overflow:hidden;background:${TILE_BG}}body{position:relative;font-family:Archivo,sans-serif;color:#f2f2f2}
+.tile{position:absolute;left:40px;top:40px}
+.bytes{position:absolute;left:460px;top:88px;display:grid;grid-auto-rows:40px;align-items:center;font:500 26px "IBM Plex Mono",monospace;color:${b.color}}
+.txt{position:absolute;left:64px;right:56px;top:470px;display:flex;flex-direction:column;gap:18px}
+h1{font:400 ${nameSize}px/1 Silkscreen,monospace}
+p{font-size:38px;line-height:1.25;color:#c4c4c4}
+.team{font:400 23px/1.35 "IBM Plex Mono",monospace;color:${b.color}}</style>
+<div class="tile">${svgTile(b, st, { px: 400, title: false })}</div><div class="bytes">${bytes}</div>
+<div class="txt"><h1>${esc(b.id)}</h1><p>${esc(b.short || b.tagline)}</p>${b.team ? `<div class="team">${esc(b.team)}</div>` : ""}</div>`;
+}
+
+// One shelf tile per brand, so each sigil in the README can carry its own link.
+// sigils/live.json (written by tools/live.mjs) dims the sigils of projects that have gone quiet.
+const LIVE = fs.existsSync(path.join(ROOT, "sigils", "live.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "sigils", "live.json"), "utf8")).brightness || {} : {};
+function shelfTileSvg(b, t) {
+  const g = 1.4, fg = rgb(b.color), dimRgb = mix(rgb(TILE_BG), fg, 0.14), dim = css(dimRgb), lit = css(mix(dimRgb, fg, LIVE[b.id] ?? 1));
+  let body = `<rect width="100" height="100" fill="${TILE_BG}"/>`, n = 0;
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) {
+    const x = (c + 1) * 10 + g, y = (r + 1) * 10 + g, s = 10 - 2 * g;
+    body += `<rect x="${x}" y="${y}" width="${s}" height="${s}" fill="${dim}"/>`;
+    if (isOn(b, r, c)) body += `<rect class="p" style="animation-delay:${(t * 0.22 + n++ * 0.012).toFixed(3)}s" x="${x}" y="${y}" width="${s}" height="${s}" fill="${lit}"/>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" shape-rendering="crispEdges" role="img"><title>${b.id} ${b.hex}</title>
+<style>.p{animation:lit .12s ease-out both}@keyframes lit{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion:reduce){.p{animation:none}}</style>${body}</svg>\n`;
+}
+
+// "How to read a sigil": each row is a byte, lit = 1.
+function decodeSvg(b) {
+  const P = 26, rowH = 34, W = 8 * P + 360, H = 8 * rowH + 8;
+  const fg = rgb(b.color), dim = css(mix(rgb(TILE_BG), fg, 0.18));
+  let out = "";
+  b.rows.forEach((row, r) => {
+    const y = 4 + r * rowH;
+    for (let c = 0; c < 8; c++) out += `<rect x="${c * P + 2}" y="${y + 2}" width="${P - 4}" height="${P - 4}" fill="${row[c] === "#" ? b.color : dim}"/>`;
+    const bits = row.replace(/#/g, "1").replace(/\./g, "0");
+    out += `<text x="${8 * P + 30}" y="${y + 19}" fill="#8b949e">${bits}</text><text x="${8 * P + 175}" y="${y + 19}" fill="#8b949e">→</text><text x="${8 * P + 215}" y="${y + 19}" fill="${b.color}" font-weight="700">${rowBytes([row])[0]}</text>`;
+  });
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="18" shape-rendering="crispEdges">${out}</svg>\n`;
+}
+
+{
+  const brands = cfg.brands.map(raw => ({ ...raw, hex: hexOf(raw.rows) }));
+  brands.forEach((b, t) => fs.writeFileSync(path.join(OUT, b.id, "shelf-tile.svg"), shelfTileSvg(b, t)));
+  fs.writeFileSync(path.join(OUT, "decode.svg"), decodeSvg(brands[0]));
+  if (browser) for (const b of brands.filter(x => x.link)) {
+    const html = path.join(BUILD, `${b.id}-readme.html`);
+    fs.writeFileSync(html, readmeCardHtml(b, style));
+    screenshot(browser, html, path.join(OUT, b.id, "readme-card.png"), 800, 800);
+  }
+  console.log("readme cards, shelf tiles, decode.svg");
+}
