@@ -1,5 +1,5 @@
 sigils/.build/
 .claude/
-# Kept local only: working notes and the Claude-hosted workshop page
+# Kept local only: working notes and the sigil workshop page
 PLAN.md
 tools/sigil-atolyesi.html
