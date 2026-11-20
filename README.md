@@ -26,7 +26,7 @@ Read the bytes top to bottom and you get `0x3C7EE7E77E3C183C`. That number is th
 </details>
 
 <!-- now:start -->
-<img src="sigils/out/cipherforest/sigil-40.png" width="20" align="absmiddle" alt=""> &nbsp;**Now building:** cipherforest, last push 2 days ago.
+<img src="sigils/out/cipherforest/sigil-40.png" width="20" align="absmiddle" alt=""> &nbsp;**Now building:** cipherforest, last push 3 days ago.
 <!-- now:end -->
 
 ## Projects
@@ -48,9 +48,9 @@ Private for now. The sigils are public, though.
 </table>
 
 <!-- calendar:start -->
-<img src="sigils/out/contributions.svg" width="100%" alt="495 contributions in the last year, drawn as an LED panel">
+<img src="sigils/out/contributions.svg" width="100%" alt="500 contributions in the last year, drawn as an LED panel">
 
-<sub>495 contributions in the last year. One LED per day.</sub>
+<sub>500 contributions in the last year. One LED per day.</sub>
 <!-- calendar:end -->
 
 ## Ping me
