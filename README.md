@@ -26,7 +26,7 @@ Read the bytes top to bottom and you get `0x3C7EE7E77E3C183C`. That number is th
 </details>
 
 <!-- now:start -->
-<img src="sigils/out/cipherforest/sigil-40.png" width="20" align="absmiddle" alt=""> &nbsp;**Now building:** cipherforest, last push 6 days ago.
+<img src="sigils/out/cipherforest/sigil-40.png" width="20" align="absmiddle" alt=""> &nbsp;**Now building:** cipherforest, last push last week.
 <!-- now:end -->
 
 ## Projects
