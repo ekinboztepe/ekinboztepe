@@ -48,9 +48,9 @@ Private for now. The sigils are public, though.
 </table>
 
 <!-- calendar:start -->
-<img src="sigils/out/contributions.svg" width="100%" alt="582 contributions in the last year, drawn as an LED panel">
+<img src="sigils/out/contributions.svg" width="100%" alt="585 contributions in the last year, drawn as an LED panel">
 
-<sub>582 contributions in the last year. One LED per day.</sub>
+<sub>585 contributions in the last year. One LED per day.</sub>
 <!-- calendar:end -->
 
 ## Ping me
